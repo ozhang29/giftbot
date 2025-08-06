@@ -1,9 +1,13 @@
 from openai import OpenAI
 import streamlit as st
+import os
+
+api_key = os.getenv("OPENAI_API_KEY")
+
 
 client = OpenAI(
   base_url="https://openrouter.ai/api/v1",
-  api_key="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",
+  api_key= api_key,
 )
 
 st.set_page_config(page_title="GiftBot", page_icon = "🎁")
