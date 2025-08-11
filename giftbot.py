@@ -1,13 +1,13 @@
 from openai import OpenAI
 import streamlit as st
-import os
+
 
 api_key = st.secrets["OPENAI_API_KEY"]
 print("key", api_key[:10])
 
 client = OpenAI(
   base_url="https://openrouter.ai/api/v1",
-  api_key= api_key,
+  api_key= "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",
 )
 
 st.set_page_config(page_title="GiftBot", page_icon = "🎁")
@@ -34,9 +34,9 @@ if submitted:
             Budget: {budget}"""
 
             response = client.chat.completions.create(
-                model = "openrouter/horizon-beta",
-                messages=[{"role": "user", "content": prompt},
-                          {"role": "system", "content": "You are a smart and thoughtful assistant. Think carefully."}]
+                model = "openai/gpt-oss-20b:free",
+                messages=[
+                          {"role": "system", "content": "You are a smart and thoughtful assistant. Think carefully."},{"role": "user", "content": prompt}]
             )
 
             gift_ideas = response.choices[0].message.content
