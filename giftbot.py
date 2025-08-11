@@ -7,11 +7,11 @@ print("key", api_key[:10])
 
 client = OpenAI(
   base_url="https://openrouter.ai/api/v1",
-  api_key= "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",
+  api_key= "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!!!",
 )
 
 st.set_page_config(page_title="GiftBot", page_icon = "🎁")
-st.title("🎁 GiftBot: Find the Perfect Gift")
+st.title("🎁 GiftBot: Find the Perfect Gift!!!")
 
 #Set up the form
 with st.form("gift_form"):
