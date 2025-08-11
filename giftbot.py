@@ -16,6 +16,7 @@ st.title("🎁 GiftBot: Find the Perfect Gift")
 #Set up the form
 with st.form("gift_form"):
     recipient = st.text_input("Who is this gift for?")
+    linkedin_url = st.text_input("Optional: Paste their LinkedIn profile URL")
     interests = st.text_area("What do they like (i.e. hobbies, brands, lifestyle)?")
     history = st.text_area("What have you talked with this person about?")
     budget = st.text_input("What’s your budget? (e.g., $50, under $100, no limit)")
